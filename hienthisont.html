@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>hiển thị số nguyên tố</title>
+	<style type="text/css">
+		#result{
+			width:55%;
+			margin:40px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="result">
+		
+	</div>
+	<script type="text/javascript">
+		function isPrime(number){
+			if(number<=1){
+				return false;
+			}
+			else if(number===2){
+				return true;
+			}else{
+				let temp = number/2;
+				for(let i = 2;i<=temp;i++){
+					if(number%i==0){
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+
+		let r = document.getElementById("result");
+		let n = Number(prompt("Nhập vào số bất kỳ"));
+		for(let i = 0;i<n;i++){
+			if(isPrime(i)){
+				r.innerHTML+= i + " ";
+			}
+		}
+	</script>
+</body>
+</html>
